@@ -54,17 +54,6 @@ const canonicalURL = new URL(Astro.url.pathname, SITE.url);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Theme: set before paint to avoid flash -->
-    <script is:inline>
-      (function() {
-        try {
-          var saved = localStorage.getItem('ultrec-theme');
-          var pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', saved || pref);
-        } catch(e) {}
-      })();
-    </script>
-
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 
