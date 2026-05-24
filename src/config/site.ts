@@ -7,7 +7,6 @@ export const SITE = {
 
   contact: {
     emailSales:      'jherrera.ultrec@gmail.com',
-    emailService:    'Servicios.ultrec@gmail.com',
     phoneSales:      '+52 55 1139 2294',
     whatsapp:        '5215511392294',
     whatsappMessage: 'Bienvenido a ULTREC. ¿En qué podemos servirte?',
