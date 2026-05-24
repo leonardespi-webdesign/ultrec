@@ -35,6 +35,9 @@ export interface SiteContent {
     categories: Category[];
     identification: IdentificationItem[];
   };
+  accesorios: {
+    categories: Category[];
+  };
 }
 
 // ── Load & parse ─────────────────────────────────────────────────────────────
@@ -71,3 +74,11 @@ export const dispositivosCategories: Category[] = data.dispositivos.categories.m
 }));
 
 export const identificationItems: IdentificationItem[] = data.dispositivos.identification;
+
+export const accesoriosCategories: Category[] = data.accesorios.categories.map(cat => ({
+  ...cat,
+  products: cat.products.map(p => ({
+    ...p,
+    image: resolveImg(p.image),
+  })),
+}));

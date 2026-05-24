@@ -145,3 +145,60 @@ dispositivos:
 
     - label: Monedero Multimoneda
       description: Cobro automático por monedas
+
+
+# ------------------------------------------------------------
+# ACCESORIOS PAGE
+# Accessories and spare parts offered by ULTREC.
+# Same structure as dispositivos: categories with products.
+# ------------------------------------------------------------
+accesorios:
+  categories:
+    - id: lectores
+      title: Sistemas de Identificación y Lectores
+      products:
+        - name: Lector Biométrico de Huella Digital
+          image: placeholder.png
+          description: Módulo de identificación por huella dactilar compatible con todos los modelos ULTREC. Alta precisión y respuesta rápida en entornos de alto tráfico.
+
+        - name: Lector de Tarjeta de Proximidad RFID
+          image: placeholder.png
+          description: Lector RFID para tarjetas o llaveros de acceso. Frecuencia 125 kHz / 13.56 MHz. Integración directa con torniquetes y controles de acceso ULTREC.
+
+        - name: Lector de Código de Barras y QR
+          image: placeholder.png
+          description: Módulo de lectura óptica para códigos QR y de barras 1D/2D. Ideal para sistemas de boleto o acceso con código impreso o en pantalla.
+
+        - name: Teclado Numérico de Acceso
+          image: placeholder.png
+          description: Teclado de PIN resistente a la intemperie. Permite configurar códigos de acceso individuales o grupales.
+
+        - name: Control Remoto
+          image: placeholder.png
+          description: Control remoto de largo alcance para apertura manual de torniquetes. Incluye receptor de señal para montaje en equipo.
+
+    - id: monederos
+      title: Monederos y Sistemas de Cobro
+      products:
+        - name: Monedero Multimoneda
+          image: placeholder.png
+          description: Aceptador de monedas configurable para $5 o $10 MXN por paso. Compatible con torniquetes de control de acceso y máquinas vending ULTREC.
+
+        - name: Módulo de Cobro Electrónico
+          image: placeholder.png
+          description: Sistema de cobro electrónico para integración con lectores de tarjeta o QR de pago. Permite tarifas variables por turno o evento.
+
+    - id: refacciones
+      title: Refacciones y Partes
+      products:
+        - name: Kit de Refacciones para Torniquete
+          image: placeholder.png
+          description: Piezas de repuesto originales para torniquetes ULTREC. Incluye resortes, ejes, sensores y mecanismos de bloqueo según modelo.
+
+        - name: Cuerpo de Repuesto para Máquina Vending
+          image: placeholder.png
+          description: Partes estructurales y mecanismos de resorte para máquinas expendedoras mecánicas ULTREC.
+
+        - name: Tarjeta Electrónica de Control
+          image: placeholder.png
+          description: Tarjeta de control de repuesto para torniquetes y sistemas de acceso ULTREC. Compatible con todas las series actuales.

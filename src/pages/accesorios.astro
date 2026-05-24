@@ -1,36 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { dispositivosCategories, identificationItems } from '../data/content';
+import { accesoriosCategories } from '../data/content';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const contactoUrl = `${base}/contacto?asunto=Cotizaci%C3%B3n`;
 
-// Alternate background on even-indexed categories
 const altIds = new Set(
-  dispositivosCategories
+  accesoriosCategories
     .filter((_, i) => i % 2 !== 0)
     .map(c => c.id)
 );
 ---
 
 <Layout
-  title="Dispositivos"
-  description="Catálogo completo de torniquetes de cuerpo completo, sistemas de control de acceso y máquinas vending ULTREC."
+  title="Accesorios"
+  description="Accesorios, lectores de identificación, monederos y refacciones originales para sistemas ULTREC."
 >
   <div class="page-wrapper">
-    <!-- Page header -->
     <section class="page-header">
       <div class="container">
-        <h1 class="page-title">Dispositivos</h1>
+        <h1 class="page-title">Accesorios</h1>
         <p class="page-desc">
-          Soluciones de fabricación propia para el control de acceso y retail autónomo. Cada equipo está diseñado
-          para entornos de alto tráfico con los más altos estándares de calidad.
+          Lectores de identificación, sistemas de cobro, refacciones originales y componentes complementarios
+          para integrar y mantener tus equipos ULTREC en óptimas condiciones.
         </p>
       </div>
     </section>
 
-    <!-- Product categories — driven by src/data/content.yml -->
-    {dispositivosCategories.map((cat) => (
+    {accesoriosCategories.map((cat) => (
       <section
         class={`category-section${altIds.has(cat.id) ? ' alt-bg' : ''}`}
         aria-labelledby={`${cat.id}-heading`}
@@ -65,33 +62,6 @@ const altIds = new Set(
         </div>
       </section>
     ))}
-
-    <!-- Identification methods — driven by src/data/content.yml -->
-    <section class="id-section alt-bg" aria-labelledby="id-heading">
-      <div class="container">
-        <h2 id="id-heading" class="category-heading">
-          <span class="category-line"></span>
-          Métodos de Identificación Compatibles con Nuestros Sistemas
-        </h2>
-        <div class="id-grid">
-          {identificationItems.map(item => (
-            <div class="id-card card-glow">
-              <div class="id-icon-wrap">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                  <line x1="8" y1="21" x2="16" y2="21"/>
-                  <line x1="12" y1="17" x2="12" y2="21"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="id-label">{item.label}</h3>
-                <p class="id-desc">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   </div>
 </Layout>
 
@@ -160,7 +130,7 @@ const altIds = new Set(
     .product-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (min-width: 1024px) {
-    .product-grid { grid-template-columns: repeat(4, 1fr); }
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
   }
   .product-card {
     background: var(--color-surface);
@@ -177,7 +147,6 @@ const altIds = new Set(
     display: block;
     background: var(--color-surface-alt);
   }
-
   .product-body {
     padding: 20px;
     display: flex;
@@ -227,47 +196,5 @@ const altIds = new Set(
   }
   .product-cta:hover {
     color: var(--color-glow);
-  }
-
-  /* Identification */
-  .id-section {
-    padding: 72px 0;
-  }
-  .id-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  @media (min-width: 640px) {
-    .id-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (min-width: 1024px) {
-    .id-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  .id-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .id-icon-wrap {
-    color: var(--color-cyan);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .id-label {
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--color-text);
-    margin: 0 0 4px;
-  }
-  .id-desc {
-    color: var(--color-text-muted);
-    font-size: 13px;
-    margin: 0;
   }
 </style>
